@@ -3,6 +3,8 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require './check/logins.rb'
+
 
 configure do
   enable :sessions
@@ -23,8 +25,9 @@ before '/secure/*' do
 end
 
 
+
 get '/' do
-	erb 'Главная страница'
+	erb "Главная страница!"
 end
 
 get '/warehours' do
@@ -36,18 +39,32 @@ get '/add' do
 end
 
 get '/login' do
+	@access = 'Ваша должность'
    	erb :login_form
 end
 
+get '/logout' do	
+	session.delete(:identity)
+        redirect to '/'
+end
+
+
 post '/login/access' do 
-	
-if params['users'] == 'admin' && params['userspass'] == 'admin'
-	session[:identity] = params['users']
+
+#check_ligon = Positional.new([params[:user_login].to_s, params[:user_pass].to_s])
+#check_login.check
+#check_login.result
+
+if params['user_login'] == 'admin' && params['user_pass'] == 'admin'
+	session[:identity] = params['user_login']
 	where_user_came_from = session[:previous_url] || '/'
 	redirect to where_user_came_from
-else
-	@access = 'Accsess denied'
+	
+else	
+	@access = 'Не верный пароль'
 	erb :login_form
 end
+
+
 
 end

@@ -8,29 +8,40 @@
 		<link href="/my_css/navbar-bg.css" rel="stylesheet">		
 	</head>
 	<body>
+
 <div class="container">
 <!--"navbar navbar-expand-lg navbar-light bg-light"-->
-	<nav class="navbar navbar-expand-md navbar-linght bg-my" role="navigation">
-	<div class="container-fluid">
-	<a class="navbar-brand" href="/">Главная</a>
+	<nav class="navbar navbar-expand-md navbar-linght bg-my">
+	<div class="container-fluid mx-auto ">
+	<a class="navbar-brand fs-2" href="/">86 Цех</a>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
 	<span class="navbar-toggler-icon"></span>
-	</button>
+	</button>                    	
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-		<a class="nav-link active" aria-current="page" href="/warehours">Учет</a>
-		<a class="nav-link active" href="/">lorem</a>
-		<a class="nav-link active" href="/">lorem</a>                              
+		<a class="nav-link active fs-3" aria-current="page" href="/warehours">Учет</a>		                              		
 		</div>	
 	</div>
-	<% if username == session[:identity] then %>
+	<% if session[:identity] then %>
 	<div class='container'>
-	  	<a class="nav-link active" href="/">test</a>
+	  	<a class="nav-link active fs-3" href="/">Правки</a>
 	</div>
-	<% end %>
+
 	<div class="navbar-nav pull-right">		
-		<a class="nav-link active" href="/login"><%= username %></a>
+		<a class="nav-link active fs-4" href="/logout" style="width: 100px;">Выйти</a>
+	</div>	
+
+	<div class="navbar-nav pull-right text-success fs-4" ><%= username %></div>
+
+	<% else %>
+
+	<div class="navbar-nav pull-right">		
+		<a class="nav-link active fs-3" href="/login"><%= username %></a>
 	</div>
+                                                                                                                               
+        <% end %>                                
+
+	
 </div>
 </nav>
 
@@ -40,8 +51,11 @@
 	<% end %>
 	<%= yield %>
 </div>
-
 </div>
+
+
+
+
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
