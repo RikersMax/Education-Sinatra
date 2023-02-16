@@ -3,8 +3,8 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
-require './check/logins.rb'
-
+#require './check/logins.rb'
+require './table/create_table.rb'
 
 configure do
   enable :sessions
@@ -34,12 +34,24 @@ get '/warehours' do
    	erb :warehours
 end
 
+get '/stock' do 
+	system "D:\Ruby My Project\job\86_workshop\table\start app.rb" 			
+
+	@file_stock = File.open('D:\Ruby My Project\job\86_workshop\public\table.txt').read
+   	erb :stock
+end
+
 get '/add' do
    	erb :add
 end
 
+get '/sets' do
+    	erb :remotebox
+end
+
+
 get '/login' do
-	@access = 'Ваша должность'
+	@access = 'Должность'
    	erb :login_form
 end
 
@@ -47,6 +59,7 @@ get '/logout' do
 	session.delete(:identity)
         redirect to '/'
 end
+
 
 
 post '/login/access' do 
@@ -65,6 +78,20 @@ else
 	erb :login_form
 end
 
-
-
 end
+
+
+
+post '/usselect' do
+   	erb "<h2>#{params[:userselect1]}<br />#{params[:allsum]}<br /#{params[:datecreatebox]}<br />#{params[:datemaster]}</h2>"
+end
+
+
+
+
+
+
+
+
+
+

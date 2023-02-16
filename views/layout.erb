@@ -12,8 +12,8 @@
 <div class="container">
 <!--"navbar navbar-expand-lg navbar-light bg-light"-->
 	<nav class="navbar navbar-expand-md navbar-linght bg-my">
-	<div class="container-fluid mx-auto ">
-	<a class="navbar-brand fs-2" href="/">86 Цех</a>
+	<div class="container-fluid mx-auto">
+	<a class="navbar-brand fs-2" href="/" style="width: 100px">86 Цех</a>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
 	<span class="navbar-toggler-icon"></span>
 	</button>                    	
@@ -22,25 +22,28 @@
 		<a class="nav-link active fs-3" aria-current="page" href="/warehours">Учет</a>		                              		
 		</div>	
 	</div>
+
 	<% if session[:identity] then %>
 	<div class='container'>
-	  	<a class="nav-link active fs-3" href="/">Правки</a>
+	  	<a class="nav-link active fs-3"  href="/" style="width: 100px">Правки</a>
 	</div>
 
 	<div class="navbar-nav pull-right">		
-		<a class="nav-link active fs-4" href="/logout" style="width: 100px;">Выйти</a>
+		<a class="nav-link active fs-4" href="/logout" style="width: 100px">Выйти</a>
 	</div>	
 
 	<div class="navbar-nav pull-right text-success fs-4" ><%= username %></div>
 
 	<% else %>
-
+	<div class="container">
+	  	<a class="nav-link disabled text-muted fs-3" href="/">Правки</a>	
+	</div>
 	<div class="navbar-nav pull-right">		
 		<a class="nav-link active fs-3" href="/login"><%= username %></a>
 	</div>
-                                                                                                                               
-        <% end %>                                
-
+	<% end %>                                                                    
+                                                                                 
+                                              
 	
 </div>
 </nav>
@@ -49,6 +52,7 @@
 	<%if @error then %>
 		<div class="alert alert-error"><%=@error%></div>
 	<% end %>
+	<br />
 	<%= yield %>
 </div>
 </div>

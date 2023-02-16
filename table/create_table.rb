@@ -1,0 +1,55 @@
+#encoding: UTF-8
+
+class Table_stock
+	
+
+def self.create_table
+
+f = File.open('D:\Ruby My Project\job\86_workshop\public\table.txt', 'w')
+f.puts('
+<table class="table table-bordered"">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Номенклатура</th>
+      <th scope="col">Номер</th>
+      <th scope="col">Тип</th>
+      <th scope="col">Количество</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">00001</th>
+      <th scope="col"><a href="/">000000001</a></th>
+      <td>540</td>
+      <td>Основной</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th scope="row">00002</th>
+      <th scope="col"><a href="/">000000002</a></th>
+      <td>12G</td>
+      <td>Основной</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th scope="row">00003</th>
+      <th scope="col"><a href="/">000000003</a></th>
+      <td>540-45</td>
+      <td>Основной</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+')
+
+f.close
+
+end
+
+
+
+end
+
+
+Table_stock.create_table
