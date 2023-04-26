@@ -1,67 +1,38 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= @title ? @title : '86 цех' %></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" content-type="text/html; charset=UTF-8">
-		<!-- Bootstrap -->
-		<link href="/css/bootstrap.min.css" rel="stylesheet" >
-		<link href="/my_css/navbar-bg.css" rel="stylesheet">		
-	</head>
-	<body>
+<head>
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' href='styles/style_layout.css'>
+</head>
+<body>
 
-<div class="container">
-<!--"navbar navbar-expand-lg navbar-light bg-light"-->
-	<nav class="navbar navbar-expand-md navbar-linght bg-my">
-	<div class="container-fluid mx-auto">
-	<a class="navbar-brand fs-2" href="/" style="width: 100px">86 Цех</a>
-	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
-	<span class="navbar-toggler-icon"></span>
-	</button>                    	
-	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		<div class="navbar-nav">
-		<a class="nav-link active fs-3" aria-current="page" href="/warehours">Учет</a>		                              		
-		</div>	
+
+<div class='main-container-bar'>
+<div class='nav-bar-container'>
+
+	<div class='logo'>
+	      <h1><a href='/'>Barber-shop</a></h1>	
 	</div>
 
-	<% if session[:identity] then %>
-	<div class='container'>
-	  	<a class="nav-link active fs-3"  href="/" style="width: 100px">Правки</a>
+	<div class='list'>
+	<ul>
+	  	<li><a href='#'>Start</a></li>
+		<li class='center-item'><a href='/about'>About</a></li>
+		<li><a href='#'>Search</a></li>
+	</ul>
 	</div>
 
-	<div class="navbar-nav pull-right">		
-		<a class="nav-link active fs-4" href="/logout" style="width: 100px">Выйти</a>
-	</div>	
-
-	<div class="navbar-nav pull-right text-success fs-4" ><%= username %></div>
-
-	<% else %>
-	<div class="container">
-	  	<a class="nav-link disabled text-muted fs-3" href="/">Правки</a>	
+	<div class='log-in'>
+	      	<a href='#' title='come in'>log in</a>
 	</div>
-	<div class="navbar-nav pull-right">		
-		<a class="nav-link active fs-3" href="/login"><%= username %></a>
-	</div>
-	<% end %>                                                                    
-                                                                                 
-                                              
-	
+
 </div>
-</nav>
 
-<div>
-	<%if @error then %>
-		<div class="alert alert-error"><%=@error%></div>
-	<% end %>
-	<br />
-	<%= yield %>
-</div>
+<div class='container-content'>
+	<%= yield%>
 </div>
 
 
-
-
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
-  </body>
+</div>
+</body>
 </html>
