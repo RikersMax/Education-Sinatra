@@ -12,13 +12,11 @@
 }
 
 
-
-
-
 .nav-bar-container {
 	display: flex;
 	justify-content: space-between;
 	grid-column: 2/12;
+	margin-bottom: 1em;
 	height: 50px;
 	
 	background-color: #03fce7;
@@ -42,6 +40,10 @@
 	text-decoration: underline;	
 }
 
+.list {
+	display: flex;
+}
+
 .list>ul{
 	display: flex;
 	list-style: none;
@@ -58,10 +60,21 @@
 	border-right: solid 0.5px;
 }
 
+.log-in {
+	margin-left: 2em;
+}
+
+
 .logo>h1 {
 	color: green;
 	font-size: 30px;
 }                
+
+
+
+
+
+
 
 
 .container-content {

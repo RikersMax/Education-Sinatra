@@ -4,9 +4,13 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
-   	erb 'hello'	
+   	erb :start	
 end
 
 get '/about' do
    	erb :about
+end
+
+get '/visit' do
+   	erb :visit
 end
