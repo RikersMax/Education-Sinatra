@@ -3,22 +3,57 @@
 <head>
 	<meta charset='UTF-8'>
 	<title>Visit</title>
-	<link rel='stylesheet' href='styles/visit.css' type="text/css">
+	<link rel='stylesheet' href='styles/visit.css' type='text/css'>
+	<link rel='stylesheet' href='styles/style.css' type='text/css'
 </head>
 
 <body>
 
-<div>
-	<p>visit</p>
-	<form>
+<div class='center_container'>
+	<p>Visit</p>
 
 
+<div class='container_form_user'>
+
+	<div class='form_for_user'>
+	<form method='get'>
+	
+	<div>
+	<label>Your first name</label>
+	<input type='text' name='user_fname' value='' placeholder='Enter name'/>
+	</div>
+
+	<div>
+	<label>Your last name</label>
+	<input type='text' name='user_lname' value='' placeholder='Enter last name'/>
+	</div>
+
+	<div>
+	<label>Select date of visit</label>
+	<input type='date' name='user_time' value=''/>
+	</div>
+
+	<div>
+	<p><input type='radio' name='gender' value='men' id='radio_men'/>Men</p>
+	<p><input type='radio' name='gender' value='women' id='radio_women'/>Women</p>
+	</div>
+
+	<div class='text_wishes'>
+	<span>
+	<p>Wishes</p>
+	<textarea name='user_text' placeholder='Enter text'></textarea>
+	</span>
+	</div>
+	
+	<div>
+	<button class='button-good' type='sumbmit'>Submit</button>
+	</div>
 
 	</form>
-
+	</div>
 
 </div>
-
+</div>
 
 
 

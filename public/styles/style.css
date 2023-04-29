@@ -1,4 +1,14 @@
-body {
-	font-size: 2em;
-
+.button-good {
+	border-width: 2px;
+	border-radius: 10px;
+	padding: 10px 15px 10px 15px;
+	color: #000;
+	background-color: #3bff76;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+.center_container {
+	text-align: center;
+}
+
