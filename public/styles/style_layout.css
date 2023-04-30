@@ -90,9 +90,29 @@
 
 
 .container-footer {
+	display: flex;
+	justify-content: space-around;
+
 	background-color: #59705c;
 	grid-row: 3/4;
 	grid-column: 2/12;
+	
+	padding: 1em;	
+}
+
+
+
+.footer-links li {	
+	list-style: none;
+	margin-bottom: 1em;
+	
+}
+
+
+.footer-links img {
+	width: 100px;
+	margin-left: -7px;
+	height: 40px;
 }
 
 
