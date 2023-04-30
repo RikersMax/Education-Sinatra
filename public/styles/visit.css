@@ -1,7 +1,3 @@
-body {
-	font-size: 2em;
-}
-
 
 .container_form_user {
 	display: grid;
@@ -42,7 +38,7 @@ span{
 
 textarea {
 	width: 100%;
-	height: 250px;
+	height: 200px;
 	border-radius: 10px;
 	text-align: justify;
 	text-indent: 10px;	

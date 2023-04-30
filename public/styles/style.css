@@ -6,9 +6,16 @@
 	background-color: #3bff76;
 	margin-left: auto;
 	margin-right: auto;
+	cursor: pointer;
+}
+
+.button-good:hover {
+	background-color: #94ffb4; 
+	cursor: pointer;	
 }
 
 .center_container {
 	text-align: center;
+	
 }
 

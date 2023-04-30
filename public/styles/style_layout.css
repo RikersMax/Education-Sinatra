@@ -6,9 +6,11 @@
 }
 
 
-.main-container-bar {
+.main-container-grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
 }
 
 
@@ -16,10 +18,10 @@
 	display: flex;
 	justify-content: space-between;
 	grid-column: 2/12;
-	margin-bottom: 1em;
+	grid-row: 1/2;
 	height: 50px;
 	
-	background-color: #03fce7;
+	background-color: #9fc7af;
 
 	border-style: solid;
 	border-radius: 10px;
@@ -29,6 +31,7 @@
 	padding-left: 2rem;
 	padding-right: 2rem;
 	font-size: 24px;
+
 }
 
 .nav-bar-container a {
@@ -78,7 +81,18 @@
 
 
 .container-content {
+	margin-top: 2em;
+	margin-bottom: 2em;
 	grid-column: 2/12;	
+	font-size: 2em;
+}
+
+
+
+.container-footer {
+	background-color: #59705c;
+	grid-row: 3/4;
+	grid-column: 2/12;
 }
 
 
