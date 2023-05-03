@@ -3,6 +3,10 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 
+get '/test_jquery' do
+   	erb :page_test
+end
+
 get '/' do
    	erb :start	
 end
