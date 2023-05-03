@@ -10,13 +10,15 @@
 <body>
 
 <div class='center-container'>
+	<div class='center-container-text'>
 	<h2>Visit</h2>
+	</div>
 	<p>Here you can make an appointment with a hairdresser</p>
 	<br>
 <div class='container_form_user'>
 
 	<div class='form_for_user'>
-	<form method='get'>
+	<form method='post' action='/visit-client' role='form'>
 	
 	<div>
 	<label>Your first name</label>
@@ -45,10 +47,10 @@
 
 	<div>
 	<label>Choise pairdresser</label>
-	<select name='pairdresser_name'>
+	<select name='barber_name'>
 		<option value='name_1'>Tanya</option>
 		<option value='name_2'>Bryan</option>
-		<option value='naem_3' selected>Saif</option>
+		<option value='name_3' selected>Saif</option>
 	</select>
 
 	</div>

@@ -15,6 +15,11 @@
 }
 
 .center-container {
+	text-align: center;	
+}
+
+.center-container-text {
 	text-align: center;
-	
+	margin-top: 20px;
+	margin-bottom: 20px; 
 }

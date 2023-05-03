@@ -1,10 +1,17 @@
 
 
 
+
+
 .about-block {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(3, auto);
+}
+
+
+.about-block p {
+	margin: 5px 0px 5px 0px;
 }
 
 
@@ -13,16 +20,22 @@
 	grid-row: 1;
 }
 
-.images {
-	display: grid;
-	
-	grid-template-columns: repeat(6, 1fr);
 
-
+.company-founder {
 	grid-column: 2/12;
-	grid-row: 2;
+	grid-row: 2
 }
 
-p {
-	margin: 5px 0px 5px 0px;
+
+.images-founder {
+	font-size: 1rem;
+}
+
+.images-founder>img {
+	width: 30%;
+	height: auto;
+
+	border-radius: 10px;
+
+	
 }
