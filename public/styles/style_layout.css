@@ -79,13 +79,16 @@
 
 
 
-
 .container-content {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	grid-column: 2/12;	
 	font-size: 2em;
 }
+
+
+
+
 
 
 
@@ -114,11 +117,6 @@
 	margin-left: -7px;
 	height: 40px;
 }
-
-.footer-info {
-	
-}
-
 
 
 
