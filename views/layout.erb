@@ -36,6 +36,9 @@
 </div>
 
 <div class='container-content'>
+	<% if @error then%>
+		<div class='alert-error'><%= @error %></div>
+	<% end %>
 	<%= yield%>
 </div>
 

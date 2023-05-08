@@ -22,22 +22,22 @@
 	
 	<div>
 	<label>Your first name</label>
-	<input type='text' name='user_fname' value='' placeholder='Enter name'/>
+	<input type='text' name='user_fname' value='<%= @user_fname_client %>' placeholder='Enter name'/>
 	</div>
 
 	<div>
 	<label>Your last name</label>
-	<input type='text' name='user_lname' value='' placeholder='Enter last name'/>
+	<input type='text' name='user_lname' value='<%= @user_lname_client %>' placeholder='Enter last name'/>
 	</div>
 
 	<div>
 	<label>Your phonte</label>
-	<input type='tel' name='user_phone' value='' placeholder='Enter phone'/>
+	<input type='tel' name='user_phone' value='<%= @user_phone_client %>' placeholder='Enter phone'/>
 	</div>
 
 	<div>
 	<label>Select date of visit</label>
-	<input type='date' name='user_time' value=<%=Time.now.strftime("%Y-%m-%d") %> lang='fr-CA'/>
+	<input type='date' name='user_time' value='<%= @user_time_client ? @user_time_client : Time.now.strftime("%Y-%m-%d") %>'/>
 	</div>
 
 	<div>
