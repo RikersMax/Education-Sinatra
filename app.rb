@@ -25,7 +25,7 @@ end
 
 post '/visit-client' do
    	@user_fname_client = params[:user_fname]
-	@user_lnaem_client = params[:user_lname]
+	@user_lname_client = params[:user_lname]
 	@user_phone_client = params[:user_phone]
 	@user_time_client = params[:user_time]
 	@user_gender_client = params[:gender]
@@ -33,7 +33,7 @@ post '/visit-client' do
 	@user_text_client = params[:user_text]
 
 
-	erb("Good! <p><b>#{@user_fname_client.capitalize} #{@user_lnaem_client.capitalize}</b><p> 
+	erb("Good! <p><b>#{@user_fname_client.capitalize} #{@user_lname_client.capitalize}</b><p> 
 	you will come to visit us on <b>#{@user_time_client}</b> <p>Will be waiting for you</p> <b>#{@pairdresser_name_client}</b>")	
 	
 end
