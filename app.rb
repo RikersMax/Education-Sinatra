@@ -2,6 +2,8 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pony'
+
 
 get '/test_jquery' do
    	erb :page_test
@@ -19,8 +21,8 @@ get '/visit' do
    	erb :visit
 end
 
-get '/services' do
-   	erb :services
+get '/contacts' do
+   	erb :contacts
 end
 
 post '/visit-client' do
@@ -54,3 +56,36 @@ post '/visit-client' do
 	you will come to visit us on <b>#{@user_time_client}</b> <p>Will be waiting for you</p> <b>#{@pairdresser_name_client}</b>")	
 	
 end
+
+post '/client-review' do
+   	
+	@mail_name_client = params[:email_name]
+	@mail_pass_client = params[:email_pass]	
+	@mail_header_client = params[:email_header]
+	@mail_text_client = params[:email_text]
+	
+
+	Pony.mail({
+		:subject => @mail_header_client,
+		:body => @mail_text_client,
+		:to => 'project.testing@mail.ru',
+		:from => @mail_name_client,
+		:via => :smtp,
+			:via_options => {
+			:address => 'smtp.mail.ru',
+			:port => '465',
+			:tls => true,
+			:user_name => @mail_name_client,
+			:password => @mail_pass_client, 
+			:authentication => :plain
+  			}
+		}
+)
+	
+
+	erb('Thanks for your feedback!')
+
+
+end
+
+

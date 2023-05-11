@@ -82,8 +82,9 @@
 .container-content {
 	margin-top: 1em;
 	margin-bottom: 1em;
-	grid-column: 2/12;	
+	grid-column: 2/12;
 	font-size: 2em;
+	
 }
 
 
@@ -117,7 +118,6 @@
 	margin-left: -7px;
 	height: 40px;
 }
-
 
 
 
