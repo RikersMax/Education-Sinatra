@@ -32,22 +32,22 @@
 		
 		<div>
 		<label>Email</label>
-		<input type='text' value='' placeholder='Enter your mail' name='email_name'/>
+		<input type='text' value='<%= @mail_name_client %>' placeholder='Enter your mail' name='email_name'/>
 		</div>
 
 		<div>
 		<label>Password</label>
-		<input type='password' value='' placeholder='Enter pass mail' name='email_pass'/>
+		<input type='password' value='<%= @mail_pass_client %>' placeholder='Enter pass mail' name='email_pass'/>
 		</div>
 
 		<div>
 		<label>Header</label>
-		<input type='text' value='' placeholder='Header mail' name='email_header'/>
+		<input type='text' value='<%= @mail_header_client %>' placeholder='Header mail' name='email_header'/>
 		</div>
 	
 		<div class='mail-center-form'>
 		<label class='center-container-text'>Massage</label>
-		<textarea type='text' value='' placeholder='Enter massage' name='email_text'></textarea>
+		<textarea type='text' value='<%= @mail_text_client %>' placeholder='Enter massage' name='email_text'></textarea>
 		</div>
 
 		<div>

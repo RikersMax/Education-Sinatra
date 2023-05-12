@@ -64,6 +64,21 @@ post '/client-review' do
 	@mail_header_client = params[:email_header]
 	@mail_text_client = params[:email_text]
 	
+	hash_email = {	:email_name => 'Enter email',
+			:email_pass => 'Enter pass email',
+			:email_header => 'Enter header',
+			:email_text => 'Enter text'		
+			}
+
+
+	hash_email.each do |k, v|
+	   	if params[k] == '' then
+			@error = hash_email[k]
+			return erb :contacts
+		end
+	end
+
+
 
 	Pony.mail({
 		:subject => @mail_header_client,
