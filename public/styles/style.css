@@ -29,3 +29,13 @@
 }
 
 
+.link-text {
+	color: #5b84c7;
+}
+
+.link-text:hover {
+	text-decoration: none;
+}
+
+
+
