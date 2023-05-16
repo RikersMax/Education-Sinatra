@@ -3,6 +3,21 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pony'
+require 'sqlite3'
+
+configure do 
+   	@db = SQLite3::Database.new('barber.db')
+	@db.execute('CREATE TABLE IF NOT EXISTS"Users"(
+		"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+		"userfname" VARCHAR(50),
+		"userlname" VARCHER(50),
+		"phone" VARCHAR(15),
+		"datestemp" VARCHAR(20),
+		"gender" VARCHAR(6),
+		"barber" VARCHAR(50),
+		"summary" TEXT)')
+
+end
 
 
 get '/test_jquery' do
