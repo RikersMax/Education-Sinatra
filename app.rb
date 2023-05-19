@@ -5,9 +5,13 @@ require 'sinatra/reloader'
 require 'pony'
 require 'sqlite3'
 
+def db_get
+   	return SQLite3::Database.new('barber.db')
+end
+
 configure do 
-   	@db = SQLite3::Database.new('barber.db')
-	@db.execute('CREATE TABLE IF NOT EXISTS"Users"(
+   	db = db_get
+	db.execute('CREATE TABLE IF NOT EXISTS"Users"(
 		"id" INTEGER PRIMARY KEY AUTOINCREMENT,
 		"userfname" VARCHAR(50),
 		"userlname" VARCHER(50),
@@ -63,7 +67,20 @@ post '/visit-client' do
 			return erb :visit
 		end	   	
 	end
+	db = db_get
+	db.execute('INSERT INTO Users
+		(
+		userfname,
+		userlname,
+		phone,
+		datestemp,
+		gender,
+		barber,
+		summary
+		)
+		VALUES(?, ?, ?, ?, ?, ?, ?)', [@user_fname_client, @user_lname_client, @user_phone_client, @user_time_client, @user_gender_client, @pairdresser_name_client, @user_text_client])
 	
+
 
 
 
