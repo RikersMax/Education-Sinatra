@@ -36,12 +36,12 @@
 
 	<div>
 	<label>Select date of visit</label>
-	<input type='date' name='user_time' value='<%= @user_time_client ? @user_time_client : Time.now.strftime("%Y-%m-%d") %>'/>
+	<input class='datetime'  type='date' name='user_time' value='<%= @user_time_client ? @user_time_client : Time.now.strftime("%Y-%m-%d") %>'/>
 	</div>
 
 	<div>
-	<p><input type='radio' name='gender' value='men' id='radio_men'/>Man</p>
-	<p><input type='radio' name='gender' value='women' id='radio_women'/>Woman</p>
+	<p><input type='radio' name='gender' value='man' id='radio_man'/>Man</p>
+	<p><input type='radio' name='gender' value='woman' id='radio_woman'/>Woman</p>
 	</div>
 
 	<div>
