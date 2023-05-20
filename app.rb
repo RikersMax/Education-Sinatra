@@ -19,12 +19,37 @@ configure do
 		"datestemp" VARCHAR(20),
 		"gender" VARCHAR(6),
 		"barber" VARCHAR(50),
-		"summary" TEXT)')
-
+		"summary" TEXT)')	
 end
 
 
-get '/test_jquery' do
+get '/test' do
+	db = db_get
+	db.results_as_hash = true
+	
+	@show_user = ''
+	@arr_db = []
+        
+	db.execute('SELECT * FROM Users') do |row|
+#	@db_fname_user = row['userfname']
+#	@db_lname_user = row['userlname']			
+        @arr_db << row			
+	end
+
+	@arr_db.each do |hh|
+		@show_user += "<tr>
+		<td>#{hh['userfname']}</td>
+		<td>#{hh['userlname']}</td>
+		<td>#{hh['phone']}</td>
+		<td>#{hh['datestemp']}</td>
+		<td>#{hh['gender']}</td>
+		<td>#{hh['barber']}</td>
+		<td style='word-wrap:break-word'>#{hh['summary']}</td>
+		</tr>"
+	
+	end
+
+	
    	erb :page_test
 end
 
@@ -78,7 +103,8 @@ post '/visit-client' do
 		barber,
 		summary
 		)
-		VALUES(?, ?, ?, ?, ?, ?, ?)', [@user_fname_client, @user_lname_client, @user_phone_client, @user_time_client, @user_gender_client, @pairdresser_name_client, @user_text_client])
+		VALUES(?, ?, ?, ?, ?, ?, ?)',
+		[@user_fname_client, @user_lname_client, @user_phone_client, @user_time_client, @user_gender_client, @pairdresser_name_client, @user_text_client])
 	
 
 
@@ -134,5 +160,17 @@ post '/client-review' do
 
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
 
 

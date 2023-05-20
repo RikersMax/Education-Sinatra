@@ -67,6 +67,10 @@ select {
 	position: relative;
 }
 
+.datetime {
+	text-indent: 5px !important; 		
+}
+
 
 
 
