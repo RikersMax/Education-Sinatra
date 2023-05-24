@@ -5,6 +5,22 @@ require 'sinatra/reloader'
 require 'pony'
 require 'sqlite3'
 
+def is_barber_exists? (data_base, name)
+	data_base.execute('SELECT * FROM Barbers where barbername=?', [name]).length > 0
+end
+
+
+def seed_db (data_base, barbers)
+
+	barbers.each do |barb|
+		if !is_barber_exists?(data_base, barb)
+			data_base.execute('INSERT INTO Barbers (barbername) VALUES (?)', [barb]) 
+		end 
+	end
+
+end
+
+
 def db_get
    	return SQLite3::Database.new('barber.db')
 end
@@ -24,6 +40,11 @@ configure do
 	db.execute('CREATE TABLE IF NOT EXISTS "Barbers"(
 		"id" INTEGER PRIMARY KEY AUTOINCREMENT,
 		"barbername" VARCHAR(50))')	
+
+
+	seed_db(db, ['Nastia', 'Kris', 'lora'])
+
+
 end
 
 
