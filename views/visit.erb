@@ -47,9 +47,18 @@
 	<div>
 	<label>Choise barber</label>
 	<select name='barber_name'>
+		<% @barber_name.each do |barb|%>
+			<option <%= @pairdresser_name_client == barb ? 'selected' : ''%>><%=barb%></option>
+	
+		
+		<%end%>
+	
+
+	<!--
 		<option value='name_1' <%= @pairdresser_name_client == 'name_1' ? 'selected' : ''%>>Tanya</option>
 		<option value='name_2' <%= @pairdresser_name_client == 'name_2' ? 'selected' : ''%>>Bryan</option>
 		<option value='name_3' <%= @pairdresser_name_client == 'name_3' ? 'selected' : ''%>>Saif</option>
+	-->
 	</select>
 
 	</div>

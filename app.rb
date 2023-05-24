@@ -47,6 +47,17 @@ configure do
 
 end
 
+before do
+   	db = db_get
+	db.results_as_hash = true
+
+	@barber_name = []
+	db.execute('SELECT * FROM Barbers') do |row|
+		@barber_name << row['barbername']	   	
+	end
+
+end
+
 
 get '/test' do
 	db = db_get
@@ -70,15 +81,7 @@ get '/about' do
    	erb :about
 end
 
-get '/visit' do
-	db = db_get
-	db.results_as_hash = true
-
-	@barber_name = []
-	db.execute('SELECT * FROM Barbers') do |row|
-		@barber_name << row['barbername']	   	
-	end
-
+get '/visit' do	
    	erb :visit
 end
 
@@ -109,6 +112,10 @@ post '/visit-client' do
 			return erb :visit
 		end	   	
 	end
+
+	
+
+
 	db = db_get
 	db.execute('INSERT INTO Users
 		(
