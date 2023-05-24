@@ -9,6 +9,12 @@
 	font-size: 1rem;
 }
 
+.table-users>thead th {
+	height: 2rem;
+
+}
+
+
 .table-users>thead tr,th{
 	border-style: solid;
 	border-width: 1px;	

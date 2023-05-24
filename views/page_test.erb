@@ -29,11 +29,16 @@
 </script>
 
 
+
+
 <div>
 <table class='table-users'>
-	<caption><h2>Clients</h2></caption>
-	<caption>The table shows all clients</caption>
-	<thead>
+
+<caption><h2>Clients</h2></caption>
+<caption>The table shows all clients</caption>
+
+<thead>
+
 	<tr>
 	<th>First name </th>
 	<th>Last name </th>
@@ -43,10 +48,22 @@
 	<th>Barber </th>
 	<th>Summary </th>
 	</tr>
-	</thead>
-	<tbody>
-	<%= @show_user%>
-	</tbody>
+</thead>
+
+<tbody>
+	<%@arr_db.each do |hh| %>	 
+	<tr>
+		<td><%=hh['userfname']%></td>
+		<td><%=hh['userlname']%></td>
+		<td><%=hh['phone']%></td>
+		<td><%=hh['datestemp']%></td>
+		<td><%=hh['gender']%></td>
+		<td><%=hh['barber']%></td>
+		<td style='word-wrap:break-word'><%=hh['summary']%></td>
+	</tr>	
+	<%end%>
+
+</tbody>
 </table>
 
 </div>

@@ -11,7 +11,7 @@ end
 
 configure do 
    	db = db_get
-	db.execute('CREATE TABLE IF NOT EXISTS"Users"(
+	db.execute('CREATE TABLE IF NOT EXISTS "Users"(
 		"id" INTEGER PRIMARY KEY AUTOINCREMENT,
 		"userfname" VARCHAR(50),
 		"userlname" VARCHER(50),
@@ -19,7 +19,11 @@ configure do
 		"datestemp" VARCHAR(20),
 		"gender" VARCHAR(6),
 		"barber" VARCHAR(50),
-		"summary" TEXT)')	
+		"summary" TEXT)')
+
+	db.execute('CREATE TABLE IF NOT EXISTS "Barbers"(
+		"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+		"barbername" VARCHAR(50))')	
 end
 
 
@@ -30,25 +34,9 @@ get '/test' do
 	@show_user = ''
 	@arr_db = []
         
-	db.execute('SELECT * FROM Users') do |row|
-#	@db_fname_user = row['userfname']
-#	@db_lname_user = row['userlname']			
-        @arr_db << row			
+	db.execute('SELECT * FROM Users') do |row|			
+        	@arr_db << row			
 	end
-
-	@arr_db.each do |hh|
-		@show_user += "<tr>
-		<td>#{hh['userfname']}</td>
-		<td>#{hh['userlname']}</td>
-		<td>#{hh['phone']}</td>
-		<td>#{hh['datestemp']}</td>
-		<td>#{hh['gender']}</td>
-		<td>#{hh['barber']}</td>
-		<td style='word-wrap:break-word'>#{hh['summary']}</td>
-		</tr>"
-	
-	end
-
 	
    	erb :page_test
 end
@@ -62,6 +50,14 @@ get '/about' do
 end
 
 get '/visit' do
+	db = db_get
+	db.results_as_hash = true
+
+	@barber_name = []
+	db.execute('SELECT * FROM Barbers') do |row|
+		@barber_name << row['barbername']	   	
+	end
+
    	erb :visit
 end
 
